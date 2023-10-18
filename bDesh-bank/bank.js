@@ -14,7 +14,7 @@ document.getElementById('signin-button').addEventListener('click', () => {
 
         loginSection.appendChild(span); 
         
-        window.location.href = "bankInside.html";       
+        window.location.href = "insideBank.html";       
     }
     else{
         alert('Wrong Email or Password');
