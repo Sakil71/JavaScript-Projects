@@ -11,11 +11,22 @@
 
 <body class="w-3/4 m-auto bg-slate-300 font-mono">
     <header>
-        <nav class="lg:flex justify-between items-center mb-5">
-            <h1 class=" text-5xl my-10 font-bold text-cyan-500 hover:text-cyan-400 ">bDesh</h1>
-            <button
-                class=" text-3xl p-4  text-cyan-900 rounded-full shadow-lg shadow-slate-400 hover:shadow-slate-500"><i
-                    class="fa-solid fa-user"></i></button>
+        <nav class="flex justify-between items-center mb-5">
+            <h1 
+            class="text-2xl md:text-4xl lg:text-5xl 
+                my-10 font-bold">
+                <span class=" text-cyan-800 hover:text-cyan-900 cursor-pointer font-serif">bDesh</span>
+                Bank
+            </h1>
+
+            <button 
+            title="Profile" 
+            class="text-md md:text-3xl lg:text-3xl
+                px-2 py-1 md:px-4 md:py-3 lg:px-4 lg:py-3
+                text-cyan-900 rounded-full shadow-lg shadow-slate-400 hover:shadow-slate-500                
+                ">
+                <i class="fa-solid fa-user"></i>
+            </button>
         </nav>
     </header>
 
@@ -26,44 +37,61 @@
                 class="fa-solid fa-arrow-left-long text-3xl mb-5 text-slate-500 hover:text-slate-700"></i>
 
             <!-- Total Balance -->
-            <h1 class="mb-5 text-4xl font-semibold text-sky-900 font-mono">Balance: <span id="total-balance"
-                    class="font-bold">1200</span></h1>
+            <h1 class="mb-5 text-xl md:text-3xl lg:text-4xl font-semibold text-sky-900 font-mono">
+                Balance:
+                <span id="total-balance" class="font-bold cursor-pointer">1200</span>
+            </h1>
 
 
             <!-- After Cliked Deposit Button Display -->
             <div id="after-deposit-display" hidden>
-                <input id="deposit-field" class="block bg-slate-950 text-white p-3 rounded-md text-3xl w-full mb-5" type="number" name="" placeholder="00 taka">
+                <input id="deposit-field"
+                    class="block bg-slate-950 text-white p-3 rounded-md text-xl md:text-3xl lg:text-3xl w-full mb-5"
+                    type="number" name="" placeholder="00 taka">
 
-                <button id="deposit-now-button" class="bg-green-800 hover:bg-green-900 text-white p-3 rounded-md text-3xl w-full">Deposit Now</button>
+                <button id="deposit-now-button"
+                    class="bg-green-800 hover:bg-green-900 text-white p-3 rounded-md text-lg md:text-2xl lg:text-3xl w-full">Deposit
+                    Now</button>
 
                 <!-- Deposit History -->
                 <div id="deposit-history" class="mt-8">
-                    <h1 class="text-green-800 text-4xl font-bold">Deposit History</h1>
-                    <p id="default-deposit-history" class="text-3xl my-3">You do not have any deposit history.</p>
+                    <h1 class="text-green-800 text-xl md:text-3xl lg:text-4xl font-bold">Deposit History</h1>
+                    <p id="default-deposit-history" class="text-base md:text-2xl lg:text-2xl my-3">You do not have any
+                        deposit history.</p>
                 </div>
             </div>
 
             <!-- After Clicked Withdraw Button Display -->
             <div id="after-withdraw-display" hidden>
-                <input id="withdraw-field" class="block bg-slate-950 text-white p-3 rounded-md text-3xl w-full mb-5" type="number" name="" placeholder="00 taka">
+                <input id="withdraw-field"
+                    class="block bg-slate-950 text-white p-3 rounded-md text-xl md:text-3xl lg:text-3xl w-full mb-5"
+                    type="number" name="" placeholder="00 taka">
 
-                <button id="withdraw-now-button" class="bg-red-800 hover:bg-red-900 text-white p-3 rounded-md text-3xl w-full">Withdraw Now</button>
+                <button id="withdraw-now-button"
+                    class="bg-red-800 hover:bg-red-900 text-white p-3 rounded-md text-lg md:text-2xl lg:text-3xl w-full">Withdraw
+                    Now</button>
 
                 <!-- Deposit History -->
                 <div id="withdraw-history" class="mt-8">
-                    <h1 class="text-red-900 text-4xl font-bold">Withdraw History</h1>
-                    <p id="default-withdraw-history" class="text-3xl my-3">You do not have any withdraw history.</p>
+                    <h1 class="text-green-800 text-xl md:text-3xl lg:text-4xl font-bold">Withdraw History</h1>
+                    <p id="default-withdraw-history" class="text-base md:text-2xl lg:text-2xl my-3">You do not have any
+                        withdraw history.</p>
                 </div>
             </div>
 
 
             <!-- Button -->
-            <div id="before-display" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
-                <button id="deposit-button"
-                    class="text-zinc-100 text-4xl font-semibold mb-5 bg-green-800 rounded-lg p-8 shadow-lg shadow-slate-600 hover:bg-green-900">Deposit</button>
+            <div id="before-display" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 md:gap-8 lg:gap-10">
+                <button id="deposit-button" class="text-zinc-100 
+                    text-base md:text-3xl lg:text-4xl font-semibold 
+                    bg-green-800 rounded-lg 
+                    p-2 md:p-5 lg:p-8 
+                    shadow-lg shadow-slate-300 hover:bg-green-900">Deposit</button>
 
-                <button id="Withdraw-button"
-                    class="text-zinc-100 text-4xl font-semibold mb-5 bg-red-800 rounded-lg p-8 shadow-lg shadow-slate-600 hover:bg-red-900">Withdraw</button>
+                <button id="Withdraw-button" class="text-zinc-100 
+                    text-base md:text-3xl lg:text-4xl 
+                    font-semibold bg-red-800 rounded-lg p-2 md:p-5 lg:p-8 
+                    shadow-lg shadow-slate-300 hover:bg-red-900">Withdraw</button>
             </div>
 
         </section>

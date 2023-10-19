@@ -11,7 +11,7 @@ document.getElementById('deposit-button').addEventListener('click', () => {
     // back button
     const backButton = document.getElementById('back-button');
     backButton.removeAttribute('hidden', true)
-    backButton.addEventListener('click', ()=>{
+    backButton.addEventListener('click', () => {
         window.location.href = 'insideBank.html';
     });
 
@@ -42,14 +42,14 @@ document.getElementById('deposit-button').addEventListener('click', () => {
 
         //When deposite history 00
         const defaultHistory = document.getElementById('default-deposit-history');
-        if(depositValue > 0){
+        if (depositValue > 0) {
             defaultHistory.style.display = 'none';
         }
 
         // When deposite history access
         const p = document.createElement('p');
         p.innerHTML = `        
-        <p class="text-3xl my-3">
+        <p class="text-xs md:text-2xl lg:text-2xl my-3">
         <i class="fa-solid fa-circle-plus text-green-900"></i> 
         You have successfully deposit <span class="font-bold">${depositValue}</span> taka.
         </p>
@@ -61,7 +61,7 @@ document.getElementById('deposit-button').addEventListener('click', () => {
 
 
 // Withdraw-button
-document.getElementById('Withdraw-button').addEventListener('click', ()=>{
+document.getElementById('Withdraw-button').addEventListener('click', () => {
     //Before display
     const beforeDisplay = document.getElementById('before-display');
     beforeDisplay.style.display = 'none';
@@ -73,7 +73,7 @@ document.getElementById('Withdraw-button').addEventListener('click', ()=>{
     // back button
     const backButton = document.getElementById('back-button');
     backButton.removeAttribute('hidden', true)
-    backButton.addEventListener('click', ()=>{
+    backButton.addEventListener('click', () => {
         window.location.href = 'insideBank.html';
     });
 
@@ -87,14 +87,14 @@ document.getElementById('Withdraw-button').addEventListener('click', ()=>{
         if (withdrawValue === 0 || isNaN(withdrawValue)) {
             alert('Enter Withdraw Amount');
             return 0;
-        };         
-        
+        };
+
         //Total balance
         const totalBalance = document.getElementById('total-balance');
         const totalBalanceNumber = parseFloat(totalBalance.innerText);
 
         //Insufficient Balance check
-        if(totalBalanceNumber < withdrawValue){
+        if (totalBalanceNumber < withdrawValue) {
             alert('Insufficient Balance');
             withdrawField.value = '';
             return 0;
@@ -112,15 +112,15 @@ document.getElementById('Withdraw-button').addEventListener('click', ()=>{
 
         //When withdraw history 00
         const defaultHistory = document.getElementById('default-withdraw-history');
-        if(withdrawValue > 0){
+        if (withdrawValue > 0) {
             defaultHistory.style.display = 'none';
         }
 
         // When withdraw history access
         const p = document.createElement('p');
         p.innerHTML = `        
-        <p class="text-3xl my-3">
-        <i class="fa-solid fa-circle-minus text-green-900"></i> 
+        <p class="text-xs md:text-2xl lg:text-2xl my-3">
+        <i class="fa-solid fa-circle-minus text-red-900"></i> 
         You have successfully withdraw <span class="font-bold">${withdrawValue}</span> taka.
         </p>
 
@@ -128,4 +128,27 @@ document.getElementById('Withdraw-button').addEventListener('click', ()=>{
         withdrawHistory.appendChild(p);
 
     })
+})
+
+
+//Total Balance Toggle Button With Star:
+
+let showStar = false;
+const balance = document.getElementById('total-balance').innerText;
+
+document.getElementById('total-balance').addEventListener('click', (event) => {
+    if (showStar) {
+        //show balance
+        event.target.innerHTML = balance;
+    }
+    else {
+        //Show the star icon
+        const starIcon = document.createElement('span');
+        starIcon.innerHTML = '&#8902;&#8902;&#8902;&#8902;';
+
+        event.target.innerText = '';
+        event.target.appendChild(starIcon);
+    }
+    //update show star
+    showStar = !showStar;
 })
