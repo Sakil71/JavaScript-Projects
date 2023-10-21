@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- Tailwind -->
+   <script src="https://cdn.tailwindcss.com"></script>
+   <!-- fontawesome -->
+   <script src="https://kit.fontawesome.com/67a2fbfa6c.js" crossorigin="anonymous"></script>
+   <title>Shopping Cart</title>
+</head>
+
+<body class="w-10/12 mx-auto font-mono bg-yellow-300">
+   <header class="my-10">
+      <h1 class="text-3xl lg:text-5xl font-extrabold">Shopping Cart</h1>
+      <p class="text-lg lg:text-4xl my-5">Please Purchase A Product</p>
+   </header>
+
+   <main>
+      <section>
+         <!-- item 1 -->
+         <div id="item1" class="flex gap-10 w-full justify-between border border-yellow-400 shadow-xl rounded-xl px-10 mb-10">
+            <div class="flex justify-items-center items-center text-5xl gap-4">
+               <img class="w-48" src="image/product-1.png" alt="">
+               <h1>iPhone 11 pro</h1>
+            </div>
+
+            <div class="flex items-center gap-10">
+               <button id="phone-minus-button" class="text-3xl bg-slate-300 px-6 py-2 hover:bg-slate-200 rounded"><i
+                     class="fa-solid fa-minus"></i></button>
+
+               <input id="phone-input-value" class="w-20 h-14 text-5xl text-center outline-none rounded bg-yellow-200"
+                  min="1" value="1" type="number">
+
+               <button id="phone-plus-button" class="text-3xl bg-slate-300 px-6 py-2 hover:bg-slate-200 rounded"><i
+                     class="fa-solid fa-plus"></i></button>
+            </div>
+
+            <div class="flex items-center gap-16">
+               <h1 class="text-5xl font-semibold">$<span id="phone-price">1200</span></h1>
+               <button id="remove-item-1" class="bg-red-300 p-4 hover:bg-red-400"><img src="image/remove.png" alt=""></button>
+            </div>
+         </div>
+
+         <!-- item 2 -->
+         <div id="item-2" class="flex gap-10 w-full justify-between border border-yellow-400 shadow-xl rounded-xl px-10 mb-10">
+            <div class="flex justify-items-center items-center text-5xl gap-4">
+               <img class="w-48" src="image/product-2.png" alt="">
+               <h1>iPhone Case</h1>
+            </div>
+
+            <div class="flex items-center gap-10">
+               <button id="case-minus-button" class="text-3xl bg-slate-300 px-6 py-2 hover:bg-slate-200 rounded"><i
+                     class="fa-solid fa-minus"></i></button>
+
+               <input id="case-input-value" class="w-20 h-14 text-5xl text-center outline-none rounded bg-yellow-200"
+                  min="1" value="1" type="number">
+
+               <button id="case-plus-button" class="text-3xl bg-slate-300 px-6 py-2 hover:bg-slate-200 rounded"><i
+                     class="fa-solid fa-plus"></i></button>
+            </div>
+
+            <div class="flex items-center gap-16">
+               <h1 class="text-5xl font-semibold">$<span id="case-price">50</span></h1>
+               <button id="remove-item-2" class="bg-red-300 p-4 hover:bg-red-400"><img src="image/remove.png"
+                     alt=""></button>
+            </div>
+         </div>
+      </section>
+
+      <section>
+         <div class="flex justify-between p-20 text-5xl font-semibold">
+            <div>
+               <h1 class="mb-10">Sub Total:</h1>
+               <h2 class="mb-10">Tax: <small>(10% included)</small></h2>
+               <h1 class="mb-10">Total:</h1>
+            </div>
+            <div>
+               <h1 class="mb-10">$<span id="sub-total">1250</span></h1>
+               <h2 class="mb-10">$<span id="tax">125</span></h2>
+               <h1 class="mb-10">$<span id="finalTotal">1250</span></h1>
+            </div>
+         </div>
+      </section>
+   </main>
+
+   <script src="shopping-utilities.js"></script>
+   <script src="shopping-carts.js"></script>
+</body>
+
+</html>
