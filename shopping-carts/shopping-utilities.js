@@ -50,7 +50,6 @@ const calculateTotal = (percentage) => {
 const removeItem = (buttonId) => {
     document.getElementById(buttonId).addEventListener('click', (event) => {
         const removeElement = event.target.parentNode.parentNode;
-        console.log(removeElement);
         removeElement.remove();
     })
 }
