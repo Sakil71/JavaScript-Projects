@@ -52,7 +52,7 @@ document.getElementById('submit-button').addEventListener('click', () => {
         const isPinMatched = document.getElementById('isPinMatched');
         isPinMatched.innerHTML = `
         <div>
-            <h1 class="text-5xl text-green-500"> Matched </h1>
+            <h1 class="text-5xl text-green-500">${inputPinValue} Matched </h1>
         </div>
         `
     }

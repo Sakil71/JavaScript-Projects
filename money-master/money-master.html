@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Money Master</title>
+</head>
+
+<body class="bg-pink-200 w-10/12 mx-auto my-10 font-mono">
+    <section>
+        <h1 class="text-5xl font-semibold mb-8">Money Master</h1>
+        <div class="lg:flex gap-20">
+            <div class="mb-20 lg:mb-0">
+                <h1 class="text-3xl lg:text-4xl mb-5">Income</h1>
+                <div>
+                    <label class="text-2xl lg:text-3xl" for="">Income:</label>
+                    <input id="income" class="outline-none lg:ml-8 px-16 py-2 rounded-xl text-xl bg-teal-800 text-white" type="number"
+                        placeholder="Your Income Ammount" name="" id="">
+                </div>
+
+                <h1 class="text-3xl lg:text-4xl my-5">Expenses</h1>
+
+                <div class="mb-5">
+                    <label class="text-2xl lg:text-3xl" for="">Food:</label>
+                    <input id="food-expenses" class="outline-none lg:ml-16 px-16 py-2 rounded-xl text-xl bg-teal-800 text-white"
+                        type="number" placeholder="Your Food Expenses" name="" id="">
+                </div>
+                <div class="mb-5">
+                    <label class="text-2xl lg:text-3xl" for="">Rent:</label>
+                    <input id="rent-expenses" class="outline-none lg:ml-16 px-16 py-2 rounded-xl text-xl bg-teal-800 text-white"
+                        type="number" placeholder="Your Rent Expenses" name="" id="">
+                </div>
+                <div class="mb-5">
+                    <label class="text-2xl lg:text-3xl" for="">Clothes:</label>
+                    <input id="clothes-expenses" class="outline-none lg:ml-4 px-16 py-2 rounded-xl text-xl bg-teal-800 text-white" type="number"
+                        placeholder="Your Clothes Expenses" name="" id="">
+                </div>
+
+                <div><button id="calculate-expenses" class="border-4 shadow-xl border-teal-900 text-xl lg:ml-40 px-32 py-1 rounded-xl hover:bg-teal-900 hover:text-white">Calculate</button></div>
+
+            </div>
+
+            <div>
+                <h1 class="text-2xl lg:text-4xl mb-5">Total expenses: <span id="total-expenses" class="font-semibold">00</span></h1>
+                <h1 class="text-2xl lg:text-4xl mb-10">Balance: <span id="balance" class="font-semibold">00</span></h1>
+
+                <label class="text-2xl lg:text-3xl" for="">Save:</label> <br>
+                <input id="percentage" class="outline-none lg:ml-4 px-10 lg:px-2 py-1 rounded-xl text-2xl bg-teal-800 text-white mb-5" type="number" name="" placeholder="%">
+                <div><button id="save-button" class="border-4 shadow-xl border-teal-900 text-2xl px-36 lg:px-28 lg:ml-5 py-1 rounded-xl hover:bg-teal-900 hover:text-white mb-10">Save</button></div>
+
+                <h1 class="text-2xl lg:text-4xl mb-5">Svaing Ammount: <span id="saving-ammount" class="font-semibold">00</span></h1>
+                <h1 class="text-2xl lg:text-4xl">Remaining Balance: <span id="remaining-balance" class="font-semibold">00</span></h1>
+            </div>
+        </div>
+    </section>
+
+    <script src="money-master.js"></script>
+</body>
+
+</html>
