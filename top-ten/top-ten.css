@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Yatra+One&display=swap');
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Yatra One';
+}
+
+.background-image {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 9), rgba(0, 0, 0, 0)), url('images/cover.jpg');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+
+.best-five-h1 {
+    color: #fff;
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 10px black,
+        0 0 20px black,
+        0 0 40px black,
+        0 0 80px black,
+        0 0 120px black;
+}
