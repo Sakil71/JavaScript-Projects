@@ -15,6 +15,7 @@ document.querySelectorAll('.select-button').forEach(button => {
         const li = document.createElement('li');
 
         if (actorsList.innerText.includes(li.innerText)) {
+            button.innerText = "Selected";
             button.disabled = true;
             button.style.backgroundColor = 'gray';
         }
@@ -27,6 +28,7 @@ document.querySelectorAll('.select-button').forEach(button => {
                 document.getElementById('default-text').style.display = 'block';
             }
             if(!actorsList.innerText.includes(li.innerText)){
+                button.innerText = "Select";
                 button.disabled = false;
                 button.style.backgroundColor = 'rgb(23 37 84)';
             }          
@@ -43,10 +45,17 @@ const getInputValue = (id) =>{
 document.getElementById('calcaulate').addEventListener('click', ()=>{
     const actorsList = document.getElementById('actors-list').children.length;
     const perActorExpenses = getInputValue('per-actor-expenses');
-
+    if(isNaN(perActorExpenses)){
+        alert('Please Enter A Valid Number');
+        return;
+    }
     document.getElementById('expenses').innerText = actorsList * perActorExpenses;
 })
 
 document.getElementById('calcaulate-total').addEventListener('click', ()=>{
+    if(isNaN(getInputValue('director-expenses')) || isNaN(getInputValue('producer-expenses'))){
+        alert('Please Enter A Valid Number');
+        return;
+    }
     document.getElementById('total-expenses').innerText = parseInt(document.getElementById('expenses').innerText) + getInputValue('director-expenses') + getInputValue('producer-expenses');    
 })

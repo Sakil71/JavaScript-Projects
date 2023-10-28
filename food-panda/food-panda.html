@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/foodpanda.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Food Panda</title>
+</head>
+
+<body class="font-mono bg-pink-600 text-white">
+    <header class="mb-10 px-10 flex justify-between items-center sticky top-0 z-10 bg-pink-700">
+        <div>
+            <h1 class="text-5xl font-semibold tracking-[.15em]">Food Panda</h1>
+            <small class="tracking-[.35em]">Order your favourite foods</small>
+        </div>
+        <div class="flex gap-2">
+            <input id="search-field" class="px-5 w-80 bg-pink-200 text-black outline-none rounded-lg" type="text"
+                placeholder="Search your food">
+            <button id="search-button" class="w-10 h-10 rounded-full bg-pink-200 flex justify-center items-center"><img
+                    class="w-5" src="images/search.svg" alt=""></button>
+        </div>
+    </header>
+
+    <main class="w-11/12 mx-auto my-5">
+        <div class="mb-2 flex gap-16 text-xl font-semibold text-pink-200">
+            <h1>Food Category:
+                <span id="category">All</span>
+            </h1>
+        </div>
+
+        <section class="flex gap-5">
+            <div id="food-card" class="grid grid-cols-3 gap-10  w-full" >
+
+            </div>
+            <div id="details" class="w-72 shadow-md hidden">
+                <div>
+                    
+                </div>
+            </div>
+        </section>       
+
+    </main>
+
+    <script src="food-panda.js"></script>
+</body>
+
+</html>
