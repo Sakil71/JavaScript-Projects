@@ -12,7 +12,7 @@ const allFood = (search) => {
                 mealDiv.classList.add('shadow-2xl', 'bg-pink-700', 'rounded')
 
                 mealDiv.innerHTML = `
-                    <img class="rounded-t-lg h-60 w-full" src='${strMealThumb}'>
+                    <img class="rounded-t-lg h=96 md:h-60 lg:h-60 w-full" src='${strMealThumb}'>
                     <div class="px-4 py-2">
                         <h1 class="text-3xl">${strMeal}</h1>
                         <small class="opacity-80">${strInstructions.slice(0, 90)}...</small>
@@ -56,14 +56,13 @@ const displayDetails = (idMeal) => {
                 details.classList.toggle("hidden");
 
                 const foodCard = document.getElementById('food-card');
-                foodCard.classList.add('grid-cols-2', 'w-1/2')
+                foodCard.classList.add('grid-cols-1','lg:grid-cols-2', 'w-1/2')
 
                 details.innerHTML = `
                     <img class="rounded-t-lg w-full" src='${food.strMealThumb}'>
                     <div class="px-4 py-2 relative">
                         <h1 class="text-3xl">${food.strMeal}</h1>
-                        <h1 class="text-xl">Country: ${food.strArea}</h1>  
-                        <h1 class="text-xl">Video Tutorial : <a class="text-xl block text-blue-900" href="${food.strYoutube}">${food.strYoutube}</a> </h1>  
+                        <h1 class="text-xl">Country: ${food.strArea}</h1> 
                                                                      
                         <small class="opacity-80">Instruction: ${food.strInstructions}</small>
 
