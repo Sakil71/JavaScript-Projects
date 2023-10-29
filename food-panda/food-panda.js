@@ -26,8 +26,8 @@ const allFood = (search) => {
         });
 }
 
-// Search Food Category
-document.getElementById('search-button').addEventListener('click', () => {
+//Show food function
+const showFood = () =>{
     const searchField = document.getElementById('search-field');
     const category = document.getElementById('category');
 
@@ -42,6 +42,18 @@ document.getElementById('search-button').addEventListener('click', () => {
 
     searchField.value = '';
     allFood(searchFieldValue);
+}
+
+// Search Food Category
+document.getElementById('search-button').addEventListener('click', () => {
+    showFood();
+})
+
+//Enter Button Search
+document.getElementById('search-field').addEventListener('keypress', (event)=>{
+    if(event.key === 'Enter'){
+        showFood();
+    }
 })
 
 //Details
