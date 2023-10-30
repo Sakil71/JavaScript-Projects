@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <title>Mobile Dokan</title>
+</head>
+
+<body>
+    <header class="px-10 py-2 sticky top-0 z-10 bg-purple-200">
+        <div class="md:flex lg:flex justify-between items-center">
+            <div>
+                <h1 class="text-4xl font-semibold">Mobile Dokan</h1>
+                <p class="text-purple-800">Find Your Favourite Phone's Information</p>
+            </div>
+            <div class="flex gap-2">
+                <input id="search-field" class="px-5 w-80 text-black outline-none rounded-lg" type="text"
+                    placeholder="Search Phone Name">
+                <button id="search-button"
+                    class="w-24 md:w-10 lg:w-10 h-10 rounded-full bg-white flex justify-center items-center"><img
+                        class="w-5" src="images/search.svg" alt="">
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="w-11/12 my-10 mx-auto relative">
+        <section id="mobile-section">
+            <h1 class="text-3xl font-semibold px-4 py-2 ml-4 rounded sticky top-32 md:top-20 lg:top-20 z-10 bg-purple-300 w-64">Brand: <span
+                    id="category">Apple</span></h1>
+
+            <!-- ALl phones -->
+            <div id="mobile-container" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5"></div>
+            <div class="text-center">
+                <button class="py-1 px-10 mt-10 text-white font-semibold rounded bg-purple-900 hover:bg-purple-800">Load More</button>
+            </div>
+        </section>
+
+        <!-- Spinner -->
+        <section>
+            <div class="flex justify-center items-center">
+                <img id="spinner" class="w-10 hidden" src="images/icons8-rotating-circles.gif">
+            </div>
+        </section>
+
+        <!-- Modal -->
+        <section>
+            <div id="modal"
+                class="fixed z-20 top-36 md:top-1/4 lg:top-1/4 md:left-1/3 lg:left-1/3 shadow-2xl shadow-blue-950 p-5 rounded-lg mx-auto bg-black text-white hidden">
+            </div>
+        </section>
+    </main>
+
+    <script src="mobile-dokan.js"></script>
+</body>
+
+</html>

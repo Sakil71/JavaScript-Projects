@@ -77,9 +77,6 @@ const displayDetails = (idMeal) => {
                         <h1 class="text-xl">Country: ${food.strArea}</h1> 
                                                                      
                         <small class="opacity-80">Instruction: ${food.strInstructions}</small>
-
-                        <button onclick="hiideDetails()" class="absolute top-[-575px] right-[-5px]">
-                        <img class="" src='images/x.png'>
                         </button>
                     </div>
                 `
