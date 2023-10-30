@@ -7,8 +7,14 @@ loadMobile('iPhone');
 
 // Display All Phone
 const displayMobile = (mobiles) => {
-    mobiles = mobiles.slice(0, 8);
-    
+    const notFound = document.getElementById('not-found');
+    if(mobiles.length === 0){
+        notFound.classList.remove('hidden');
+    }
+    else{
+        notFound.classList.add('hidden');
+    }
+
     const mobileContainer = document.getElementById('mobile-container');
     mobileContainer.innerText = '';
     mobiles.forEach(mobile => {
@@ -87,8 +93,12 @@ const modalNndDetails = async (id) => {
             <div>
                 <h1 class="text-2xl font-bold text-purple-600">${data.data.brand}</h1>
                 <h1 class="text-xl font-bold">Model: <span class="text-xl font-bold text-purple-600">${data.data.name}</span></h1>
-                <h1 class="text-xl font-bold"><span class="text-xl font-bold text-purple-600">${data.data.releaseDate ? data.data.releaseDate : "Release Date: Not available"}</span></h1>
-                <h1 class="text-xl font-bold">ROM/RAM: <span class="text-xl font-bold text-purple-600">${data.data.mainFeatures.memory ? data.data.mainFeatures.memory.slice(0, 10) : " Not available"}</span></h1>
+                <h1 class="text-xl font-bold">Date: <span class="text-xl font-bold text-purple-600">${data.data.releaseDate ? data.data.releaseDate : "Release Date: Not available"}</span></h1>
+                <h1 class="text-xl font-bold">ROM/RAM: <span class="text-xl font-bold text-purple-600">${data.data.mainFeatures.memory ? data.data.mainFeatures.memory.slice(0, 15) : " Not available"}...</span></h1>
+                <h1 class="text-xl font-bold">Chip Set: <span class="text-xl font-bold text-purple-600">${data.data.mainFeatures.chipSet ? data.data.mainFeatures.chipSet.slice(0,25) : " Not available"}...</span></h1>
+                <h1 class="text-xl font-bold">Display Size: <span class="text-xl font-bold text-purple-600">${data.data.mainFeatures.displaySize ? data.data.mainFeatures.displaySize.slice(0, 21) : " Not available"}...</span></h1>
+                <h1 class="text-xl font-bold">Blutooth: <span class="text-xl font-bold text-purple-600">${data.data.others.Bluetooth ? data.data.others.Bluetooth
+                    : " Not available"}</span></h1>
             </div>
         </div>
     `

@@ -9,7 +9,7 @@
     <title>Mobile Dokan</title>
 </head>
 
-<body>
+<body class="font-mono">
     <header class="px-10 py-2 sticky top-0 z-10 bg-purple-200">
         <div class="md:flex lg:flex justify-between items-center">
             <div>
@@ -27,15 +27,16 @@
         </div>
     </header>
 
-    <main class="w-11/12 my-10 mx-auto relative">
+    <main class="w-11/12 mt-10 mx-auto relative">
         <section id="mobile-section">
-            <h1 class="text-3xl font-semibold px-4 py-2 ml-4 rounded sticky top-32 md:top-20 lg:top-20 z-10 bg-purple-300 w-64">Brand: <span
+            <h1 class="text-xl font-semibold px-4 py-2 ml-4 rounded sticky top-32 md:top-20 lg:top-20 z-10 bg-purple-300 w-64">Brand: <span
                     id="category">Apple</span></h1>
 
             <!-- ALl phones -->
             <div id="mobile-container" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5"></div>
-            <div class="text-center">
-                <button class="py-1 px-10 mt-10 text-white font-semibold rounded bg-purple-900 hover:bg-purple-800">Load More</button>
+
+            <div id="not-found" class="my-32 text-center text-4xl font-semibold text-red-500 hidden">
+                <h1>Not found any phone, try again!</h1>
             </div>
         </section>
 
@@ -49,9 +50,13 @@
         <!-- Modal -->
         <section>
             <div id="modal"
-                class="fixed z-20 top-36 md:top-1/4 lg:top-1/4 md:left-1/3 lg:left-1/3 shadow-2xl shadow-blue-950 p-5 rounded-lg mx-auto bg-black text-white hidden">
+                class="fixed z-20 top-36 md:top-1/4 lg:top-1/4 md:left-1/3 lg:left-56 shadow-2xl shadow-blue-950 p-5 rounded-lg mx-auto bg-black text-white hidden">
             </div>
         </section>
+
+        <footer class="text-center mt-10 text-blue-900">
+            <small>&copy; All rights reserved by Mobile Dokan</small>
+        </footer>
     </main>
 
     <script src="mobile-dokan.js"></script>
