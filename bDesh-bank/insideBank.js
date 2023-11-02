@@ -21,6 +21,7 @@ document.getElementById('deposit-button').addEventListener('click', () => {
         const depositField = document.getElementById('deposit-field');
         const depositFieldValue = depositField.value;
         const depositValue = parseFloat(depositFieldValue);
+        setHistoryLocalStorage(depositValue); //Set LocalStorage
 
         if (depositValue === 0 || isNaN(depositValue)) {
             alert('Enter Deposit Amount');
@@ -32,30 +33,18 @@ document.getElementById('deposit-button').addEventListener('click', () => {
         const totalBalanceNumber = parseFloat(totalBalance.innerText);
 
         const afterTotalBalance = depositValue + totalBalanceNumber;
+        //Set balance in local storage
+        setBalanceInLs(afterTotalBalance);
 
-        totalBalance.innerText = afterTotalBalance;
+        const lsBalance = getHistoryLocalStorage('balance');
+        totalBalance.innerText = lsBalance;
 
         depositField.value = '';
 
+
         // deposit-history
-        const depositHistory = document.getElementById('deposit-history');
-
-        //When deposite history 00
-        const defaultHistory = document.getElementById('default-deposit-history');
-        if (depositValue > 0) {
-            defaultHistory.style.display = 'none';
-        }
-
-        // When deposite history access
-        const p = document.createElement('p');
-        p.innerHTML = `        
-        <p class="text-xs md:text-2xl lg:text-2xl my-3">
-        <i class="fa-solid fa-circle-plus text-green-900"></i> 
-        You have successfully deposit <span class="font-bold">${depositValue}</span> taka.
-        </p>
-
-        `
-        depositHistory.appendChild(p);
+        getHistoryValueFromLocalStorage();
+        location.reload();
     })
 })
 
